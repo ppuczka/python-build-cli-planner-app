@@ -16,9 +16,10 @@ def list_reminders():
 
 
 def add_reminder(text):
-
+    print(text)
     reminder = PoliteReminder(text)
+    print(reminder.prefix.lower())
 
     with open('reminders.csv', 'a+', newline='\n') as file:
         writer = csv.writer(file)
-        writer.writerow([reminder.text])
+        writer.writerow(reminder.text)
