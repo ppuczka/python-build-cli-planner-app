@@ -20,9 +20,9 @@ class DeadlinedReminder(Iterable, ABC):
 
 
 class DateReminder(DeadlinedReminder):
-    def __init__(self, text, date, dayfirst=True):
+    def __init__(self, text, date):
         self.text = text
-        self.date = parse(date, dayfirst)
+        self.date = parse(date, dayfirst=True)
 
     def is_due(self):
         return self.date <= datetime.now
